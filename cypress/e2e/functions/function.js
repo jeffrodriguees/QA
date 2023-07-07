@@ -94,8 +94,6 @@ module.exports = {
         cy.get('.col-xs-9 > .input > #Nome', { timeout: 20000 }).should('be.visible').type(descricao)
         cy.get('#CodigoParaGeracaoDaTurma').type(codigoParaTurma)
         cy.get('#s2id_ComposicaoEnsinoId > .select2-choice').type(composicao + '{enter}')
-        // cy.intercept('GET', 'https://homologa-sge.pontoid.com.br/Serie/ObtenhaListaDeEtapaEnsino?modalidadeId=1').as('carregaEtapas')
-        // cy.wait('@carregaEtapas')
         cy.request({
         method: 'GET',
         url: '/Serie/ObtenhaListaDeEtapaEnsino?modalidadeId=1',
@@ -568,7 +566,7 @@ module.exports = {
         cy.get()
         cy.get('#CodigoParaGeracaoDaTurma').type(codigoParaTurma)
         cy.get('#s2id_ComposicaoEnsinoId > .select2-choice').type(composicao + '{enter}')
-        cy.intercept('GET', 'https://homologa-sge.pontoid.com.br/Serie/ObtenhaListaDeEtapaEnsino?modalidadeId=1').as('carregaEtapas')
+        cy.intercept('GET', urlHom2 +'/Serie/ObtenhaListaDeEtapaEnsino?modalidadeId=1').as('carregaEtapas')
         cy.wait('@carregaEtapas')
         cy.wait(1200)
         cy.get('#s2id_EtapaEnsinoId > .select2-choice').type(etapa + '{enter}')

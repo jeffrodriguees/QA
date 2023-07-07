@@ -1,4 +1,5 @@
 const urlHom = Cypress.env('urlHom')
+const urlHom2 = Cypress.env('urlHom2')
 const urlWeb = Cypress.env('urlWeb')
 const cpfColaborador = Cypress.env('cpfColaborador')
 const usuario = Cypress.env('usuario')
